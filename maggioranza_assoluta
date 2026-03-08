@@ -1,0 +1,22 @@
+def maggioranzaAssoluta(A):
+  '''
+  Data una lista di interi, bisogna determinare se in esiste un
+  elemento di maggioranza assoluta, cioe un elemento che compare
+  piu di N/2 volte. Se tale elemento esiste, va restituito; altrimenti
+  l'algoritmo deve restituire .
+  La soluzione proposta deve avere complessita O(N)
+  '''
+  B = []
+  for x in A:
+    if B != [] and B[-1] != x:
+      B.pop()
+    else:
+      B.append(x)
+
+  if B and A.count(B[0]) > len(A) // 2:
+    return  B[0]
+  return None
+
+            
+A = [1,2111,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]
+print(maggioranzaAssoluta(A))
